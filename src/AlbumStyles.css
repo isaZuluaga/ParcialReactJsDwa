@@ -1,0 +1,23 @@
+.menuContainer{
+  background-color: black;
+  width: 300px;
+  height: 600;
+  margin-right: 100px;
+  padding-top: 100px;
+}
+
+.ImageClass{
+  height: 250px;
+  width: 250px;
+  margin: 50px;
+}
+
+.albumImageContainer{
+ 
+  
+}
+.ImageperAlbum{
+  height: 90px;
+  width: 90px;
+  margin: 8px;
+}
