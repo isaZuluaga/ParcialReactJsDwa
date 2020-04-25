@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from "react-dom";
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 import Modal from "react-bootstrap/Modal";
@@ -20,7 +19,7 @@ class App extends Component {
   }
   async componentDidMount(){
     this.apiCall();
-    //this.albumDisplay(albumId)
+
 }
      apiCall = async ()=>{
       try{
@@ -40,7 +39,6 @@ class App extends Component {
         const album = await response.json();
         for(var i =0;i<=99;i++){
           if(album[i].albumId === Id){
-
             soloUnId[i] = album[i]
           }
         }
@@ -72,17 +70,7 @@ class App extends Component {
         </div>
       ));
     }
-    get initialState() {
-      return {
-        users:[],
-        id:1,
-        album:[],
-        albumId:1,
-        show: false,
-        albumImgId: 2,
-        imgUrl:''
-      };
-    }
+
     imageDisplay = (albumImgId) =>{
       const { album, imgUrl, albumId } = this.state
       if(albumId === 1){
@@ -95,10 +83,8 @@ class App extends Component {
             console.log('imge selected url: ',this.state.imgUrl)
           }
         }
-        
       }
         if(albumId === 2){
-          
         for(var i =50;i<=99;i++){
           if(album[i].id === albumImgId){
             this.setState({ show: true,
@@ -118,7 +104,7 @@ class App extends Component {
       console.log('Id imagen escuchado:',albumImgId)
      this.imageDisplay(albumImgId);
     }
-  
+
     handleClick = (Id) => (e) => {
       e.preventDefault()
       this.setState({ Id })
@@ -129,15 +115,14 @@ class App extends Component {
     showModal = () => {
       this.setState({ show: true });
     };
-  
+
     hideModal = () => {
       this.setState({ show: false });
     };
 
-
   render(){
     const { users, album, imgUrl } = this.state
-    
+
     return (
       <div className="App">
         <div className="menuContainer">
@@ -157,17 +142,12 @@ class App extends Component {
             </Modal.Dialog>
         </div>
         <div>
-       
           <main>
-          
-          <ImgModal show={this.state.show} handleClose={this.hideModal}>
-          <h3>Modal imagen seleccionada</h3>
-            
-          
-            <Image className="ImageClass" src={imgUrl} rounded />
-          </ImgModal>
-         
-        </main>
+              <ImgModal show={this.state.show} handleClose={this.hideModal}>
+                <h3 className="modalText">Imagen seleccionada</h3>
+                <Image className="ImageClass" src={imgUrl} rounded />
+              </ImgModal>
+          </main>
         </div>
 
       </div>
