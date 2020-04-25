@@ -8,12 +8,12 @@ class ImagePerAlbum extends Component{
     render(){
         const { albumDisplay, album } = this.context
         return(
-            <div className="imagesPerAlbumContainer">
+            <div>
               <Modal.Dialog>
                     <Modal.Header>
                     <Modal.Title>Imagenes en el album seleccionado</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>
+                    <Modal.Body className="imagesPerAlbumContainer">
                     {albumDisplay(album)}
                     </Modal.Body>
               </Modal.Dialog>

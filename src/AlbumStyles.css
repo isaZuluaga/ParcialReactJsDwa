@@ -14,8 +14,8 @@
 
 
 .ImageperAlbum{
-  height: 90px;
-  width: 90px;
+  height: 100px;
+  width: 100px;
   margin: 8px;
 }
 
@@ -57,4 +57,13 @@
 
 .modalText{
   margin: 20px;
+}
+
+.imagesPerAlbumContainer{
+  background-color: whitesmoke;
+  display: grid;
+  grid-gap: 5px 5px;
+  grid-template-columns: repeat(3, 1fr);
+  overflow-y: auto;
+  height: 570px;
 }
