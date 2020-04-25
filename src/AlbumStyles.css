@@ -51,6 +51,8 @@
 
 .modalButton{
   margin: 20px;
+  width: 100px;
+  border-radius: 8px;
 }
 
 .modalText{
